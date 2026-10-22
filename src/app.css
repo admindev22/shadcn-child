@@ -160,31 +160,6 @@
 	  @apply text-[var(--foreground)];
 	}
 
-	.shadcn-child-toggle {
-	  display: inline-flex;
-	  width: 2.25rem;
-	  height: 2.25rem;
-	  align-items: center;
-	  justify-content: center;
-	  border: 0;
-	  border-radius: var(--radius);
-	  background: transparent;
-	  color: var(--foreground);
-	  cursor: pointer;
-	  transition: background-color 150ms ease, color 150ms ease;
-	}
-
-	.shadcn-child-toggle:hover,
-	.shadcn-child-toggle:focus-visible {
-	  background: var(--accent);
-	  color: var(--accent-foreground);
-	}
-
-	.shadcn-child-toggle svg {
-	  width: 1.125rem;
-	  height: 1.125rem;
-	}
-
   .shadcn-child-card {
     @apply rounded-[var(--radius)] border bg-[var(--wp--preset--color--card)] p-6 text-[var(--wp--preset--color--card-foreground)];
   }

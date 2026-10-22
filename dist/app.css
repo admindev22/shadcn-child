@@ -316,31 +316,6 @@
     color: var(--foreground);
 }
 
-	.shadcn-child-toggle {
-	  display: inline-flex;
-	  width: 2.25rem;
-	  height: 2.25rem;
-	  align-items: center;
-	  justify-content: center;
-	  border: 0;
-	  border-radius: var(--radius);
-	  background: transparent;
-	  color: var(--foreground);
-	  cursor: pointer;
-	  transition: background-color 150ms ease, color 150ms ease;
-	}
-
-	.shadcn-child-toggle:hover,
-	.shadcn-child-toggle:focus-visible {
-	  background: var(--accent);
-	  color: var(--accent-foreground);
-	}
-
-	.shadcn-child-toggle svg {
-	  width: 1.125rem;
-	  height: 1.125rem;
-	}
-
   .shadcn-child-card {
     border-radius: var(--radius);
     border-width: 1px;
@@ -382,8 +357,17 @@
 .inline-flex {
     display: inline-flex;
 }
+.h-9 {
+    height: 2.25rem;
+}
 .min-h-10 {
     min-height: 2.5rem;
+}
+.w-9 {
+    width: 2.25rem;
+}
+.cursor-pointer {
+    cursor: pointer;
 }
 .items-center {
     align-items: center;
@@ -394,11 +378,17 @@
 .overflow-hidden {
     overflow: hidden;
 }
+.rounded {
+    border-radius: var(--radius);
+}
 .rounded-\[var\(--radius\)\] {
     border-radius: var(--radius);
 }
 .border {
     border-width: 1px;
+}
+.border-0 {
+    border-width: 0px;
 }
 .border-\[var\(--border\)\] {
     border-color: var(--border);
@@ -476,11 +466,17 @@
 .text-\[var\(--wp--preset--color--primary-foreground\)\] {
     color: var(--wp--preset--color--primary-foreground);
 }
+.text-foreground {
+    color: var(--foreground);
+}
 .underline {
     text-decoration-line: underline;
 }
 .no-underline {
     text-decoration-line: none;
+}
+.accent-foreground {
+    accent-color: var(--foreground);
 }
 .shadow-sm {
     --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -489,6 +485,11 @@
 }
 .outline {
     outline-style: solid;
+}
+.ring {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 .ring-2 {
     --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -504,8 +505,8 @@
 .ring-offset-\[var\(--background\)\] {
     --tw-ring-offset-color: var(--background);
 }
-.transition {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+.transition-\[background-color\2c color\] {
+    transition-property: background-color,color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
 }
@@ -513,4 +514,28 @@
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+}
+.duration-150 {
+    transition-duration: 150ms;
+}
+.ease-\[ease\] {
+    transition-timing-function: ease;
+}
+.hover\:bg-accent:hover {
+    background-color: var(--accent);
+}
+.hover\:text-accent-foreground:hover {
+    color: var(--accent-foreground);
+}
+.focus-visible\:bg-accent:focus-visible {
+    background-color: var(--accent);
+}
+.focus-visible\:text-accent-foreground:focus-visible {
+    color: var(--accent-foreground);
+}
+.\[\&_svg\]\:h-\[1\.125rem\] svg {
+    height: 1.125rem;
+}
+.\[\&_svg\]\:w-\[1\.125rem\] svg {
+    width: 1.125rem;
 }

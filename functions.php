@@ -36,7 +36,7 @@ function shadcn_child_enqueue_assets() {
 			'shadcn-child-app',
 			$stylesheet_uri,
 			array( 'shadcn-style' ),
-		(string) filemtime( $stylesheet_path )
+			(string) filemtime( $stylesheet_path )
 		);
 	}
 
