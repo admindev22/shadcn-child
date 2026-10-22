@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: var(--wp--custom--radius, 0.625rem);
+  }
+
+  :where(.wp-site-blocks) :focus-visible {
+    outline: 2px solid var(--wp--preset--color--ring, #a1a1a1);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+	.shadcn-child-toggle {
+	  display: inline-flex;
+	  width: 2.25rem;
+	  height: 2.25rem;
+	  align-items: center;
+	  justify-content: center;
+	  border: 0;
+	  border-radius: var(--radius);
+	  background: transparent;
+	  color: var(--foreground);
+	  cursor: pointer;
+	  transition: background-color 150ms ease, color 150ms ease;
+	}
+
+	.shadcn-child-toggle:hover,
+	.shadcn-child-toggle:focus-visible {
+	  background: var(--accent);
+	  color: var(--accent-foreground);
+	}
+
+	.shadcn-child-toggle svg {
+	  width: 1.125rem;
+	  height: 1.125rem;
+	}
+
+  .shadcn-child-card {
+    @apply rounded-[var(--radius)] border bg-[var(--wp--preset--color--card)] p-6 text-[var(--wp--preset--color--card-foreground)];
+  }
+
+  .shadcn-child-button {
+    @apply inline-flex min-h-10 items-center justify-center rounded-[var(--radius)] bg-[var(--wp--preset--color--primary)] px-4 py-2 text-sm font-medium text-[var(--wp--preset--color--primary-foreground)] no-underline transition-colors hover:opacity-90;
+  }
+}
