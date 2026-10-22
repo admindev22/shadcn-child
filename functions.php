@@ -48,7 +48,7 @@ function shadcn_child_enqueue_assets() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'shadcn_child_enqueue_assets', 20 );
+add_action( 'wp_enqueue_scripts', 'shadcn_child_enqueue_assets', 99 );
 
 /**
  * Enqueue the same compiled styles in the block editor.
