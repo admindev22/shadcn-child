@@ -20,6 +20,14 @@
 			button.setAttribute( 'aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode' );
 			button.setAttribute( 'aria-pressed', isDark ? 'true' : 'false' );
 			button.classList.add( 'shadcn-child-toggle' );
+			button.classList.add(
+				'inline-flex', 'h-9', 'w-9', 'items-center', 'justify-center',
+				'border-0', 'rounded', 'bg-transparent', 'text-foreground', 'cursor-pointer',
+				'transition-[background-color,color]', 'duration-150', 'ease-[ease]',
+				'hover:bg-accent', 'hover:text-accent-foreground',
+				'focus-visible:bg-accent', 'focus-visible:text-accent-foreground',
+				'[&_svg]:h-[1.125rem]', '[&_svg]:w-[1.125rem]'
+			);
 			button.innerHTML = isDark ? sunIcon : moonIcon;
 		} );
 	}

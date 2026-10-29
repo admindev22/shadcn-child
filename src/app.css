@@ -4,7 +4,72 @@
 
 @layer base {
   :root {
-    --radius: var(--wp--custom--radius, 0.625rem);
+    --background: var(--wp--preset--color--background);
+    --foreground: var(--wp--preset--color--foreground);
+    --card: var(--wp--preset--color--card);
+    --card-foreground: var(--wp--preset--color--card-foreground);
+    --popover: var(--wp--preset--color--popover);
+    --popover-foreground: var(--wp--preset--color--popover-foreground);
+    --primary: var(--wp--preset--color--primary);
+    --primary-foreground: var(--wp--preset--color--primary-foreground);
+    --secondary: var(--wp--preset--color--secondary);
+    --secondary-foreground: var(--wp--preset--color--secondary-foreground);
+    --muted: var(--wp--preset--color--muted);
+    --muted-foreground: var(--wp--preset--color--muted-foreground);
+    --accent: var(--wp--preset--color--accent);
+    --accent-foreground: var(--wp--preset--color--accent-foreground);
+    --destructive: var(--wp--preset--color--destructive);
+    --border: var(--wp--preset--color--border);
+    --input: var(--wp--preset--color--input);
+    --ring: var(--wp--preset--color--ring);
+    --chart-1: oklch(0.869 0.005 56.366);
+    --chart-2: oklch(0.553 0.013 58.071);
+    --chart-3: oklch(0.444 0.011 73.639);
+    --chart-4: oklch(0.374 0.01 67.558);
+    --chart-5: oklch(0.268 0.007 34.298);
+    --sidebar: oklch(0.985 0.001 106.423);
+    --sidebar-foreground: oklch(0.147 0.004 49.25);
+    --sidebar-primary: oklch(0.666 0.179 58.318);
+    --sidebar-primary-foreground: oklch(0.987 0.022 95.277);
+    --sidebar-accent: oklch(0.97 0.001 106.424);
+    --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
+    --sidebar-border: oklch(0.923 0.003 48.717);
+    --sidebar-ring: oklch(0.709 0.01 56.259);
+    --radius: var(--wp--custom--radius, 0);
+  }
+
+  .dark {
+    --wp--preset--color--background: oklch(0.147 0.004 49.25);
+    --wp--preset--color--foreground: oklch(0.985 0.001 106.423);
+    --wp--preset--color--card: oklch(0.216 0.006 56.043);
+    --wp--preset--color--card-foreground: oklch(0.985 0.001 106.423);
+    --wp--preset--color--popover: oklch(0.216 0.006 56.043);
+    --wp--preset--color--popover-foreground: oklch(0.985 0.001 106.423);
+    --wp--preset--color--primary: oklch(0.473 0.137 46.201);
+    --wp--preset--color--primary-foreground: oklch(0.987 0.022 95.277);
+    --wp--preset--color--secondary: oklch(0.274 0.006 286.033);
+    --wp--preset--color--secondary-foreground: oklch(0.985 0 0);
+    --wp--preset--color--muted: oklch(0.268 0.007 34.298);
+    --wp--preset--color--muted-foreground: oklch(0.709 0.01 56.259);
+    --wp--preset--color--accent: oklch(0.268 0.007 34.298);
+    --wp--preset--color--accent-foreground: oklch(0.985 0.001 106.423);
+    --wp--preset--color--destructive: oklch(0.704 0.191 22.216);
+    --wp--preset--color--border: oklch(1 0 0 / 10%);
+    --wp--preset--color--input: oklch(1 0 0 / 15%);
+    --wp--preset--color--ring: oklch(0.553 0.013 58.071);
+    --chart-1: oklch(0.869 0.005 56.366);
+    --chart-2: oklch(0.553 0.013 58.071);
+    --chart-3: oklch(0.444 0.011 73.639);
+    --chart-4: oklch(0.374 0.01 67.558);
+    --chart-5: oklch(0.268 0.007 34.298);
+    --sidebar: oklch(0.216 0.006 56.043);
+    --sidebar-foreground: oklch(0.985 0.001 106.423);
+    --sidebar-primary: oklch(0.769 0.188 70.08);
+    --sidebar-primary-foreground: oklch(0.279 0.077 45.635);
+    --sidebar-accent: oklch(0.268 0.007 34.298);
+    --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.553 0.013 58.071);
   }
 
   :where(.wp-site-blocks) :focus-visible {
@@ -14,36 +79,124 @@
 }
 
 @layer components {
-	.shadcn-child-toggle {
-	  display: inline-flex;
-	  width: 2.25rem;
-	  height: 2.25rem;
-	  align-items: center;
-	  justify-content: center;
-	  border: 0;
-	  border-radius: var(--radius);
-	  background: transparent;
-	  color: var(--foreground);
-	  cursor: pointer;
-	  transition: background-color 150ms ease, color 150ms ease;
+	/* Keep recovery fields stacked within the same account form width. */
+	.woocommerce .shadcn-child-password-form .form-row-first,
+	.woocommerce .shadcn-child-password-form .form-row-last {
+		@apply float-none w-full;
 	}
 
-	.shadcn-child-toggle:hover,
-	.shadcn-child-toggle:focus-visible {
-	  background: var(--accent);
-	  color: var(--accent-foreground);
+	.woocommerce .shadcn-child-auth-tabs .shadcn-child-auth-options .woocommerce-form-login__rememberme {
+		@apply m-0 inline-flex items-center font-semibold;
 	}
 
-	.shadcn-child-toggle svg {
-	  width: 1.125rem;
-	  height: 1.125rem;
+	.woocommerce .shadcn-child-auth-tabs .shadcn-child-auth-options input[type="checkbox"] {
+		@apply m-0 shrink-0;
+	}
+
+	.woocommerce .shadcn-child-auth-tabs .shadcn-child-auth-options > a {
+		@apply ms-auto font-semibold;
+	}
+
+	.woocommerce .shadcn-child-auth-tabs[data-enhanced] #customer_login > div > h2 {
+		@apply sr-only;
+	}
+
+	/* Override WooCommerce's two-column layout only after tabs initialize. */
+	.woocommerce .shadcn-child-auth-tabs[data-enhanced] #customer_login > div {
+		@apply float-none w-full;
+	}
+
+	.shadcn-child-auth-tabs [data-auth-tablist][hidden],
+	.shadcn-child-auth-tabs[data-enhanced] #customer_login > [hidden] {
+		display: none;
+	}
+
+	/* WooCommerce child-theme layer. These selectors intentionally target
+	 * WooCommerce's public block classes because the markup is generated by
+	 * WooCommerce and cannot receive Tailwind utility classes from PHP. */
+	.wc-block-components-button,
+	.wc-block-components-checkout-place-order-button,
+	.wc-block-components-totals-coupon__button,
+	.wc-block-components-product-button__button,
+	.wc-block-components-panel__button {
+	  @apply inline-flex min-h-10 items-center justify-center rounded border border-transparent bg-primary px-4 py-2 text-sm font-medium text-primary-foreground no-underline transition-colors;
+	}
+
+	.wc-block-components-button:hover,
+	.wc-block-components-checkout-place-order-button:hover,
+	.wc-block-components-totals-coupon__button:hover,
+	.wc-block-components-product-button__button:hover,
+	.wc-block-components-panel__button:hover {
+	  @apply bg-accent text-accent-foreground;
+	}
+
+	.wc-block-components-text-input input,
+	.wc-block-components-combobox .components-combobox-control__input,
+	.wc-blocks-components-select .wc-blocks-components-select__select,
+	.wc-block-components-totals-coupon__input {
+	  @apply min-h-10 rounded border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm outline-none;
+	}
+
+	.wc-block-components-text-input input:focus,
+	.wc-block-components-combobox .components-combobox-control__input:focus,
+	.wc-blocks-components-select .wc-blocks-components-select__select:focus,
+	.wc-block-components-totals-coupon__input:focus {
+	  @apply border-ring ring-2 ring-ring ring-offset-2 ring-offset-background;
+	}
+
+	.wc-block-components-notice-banner,
+	.wc-block-components-sidebar,
+	.wp-block-woocommerce-checkout-order-summary-block,
+	.wc-block-cart-items__row {
+	  @apply rounded border border-border bg-card text-card-foreground;
+	}
+
+	.wc-block-components-notice-banner {
+	  @apply p-4;
+	}
+
+	.wc-block-components-notice-banner > svg {
+	  color: var(--primary);
+	}
+
+	.wc-block-components-sidebar,
+	.wp-block-woocommerce-checkout-order-summary-block {
+	  @apply p-6 shadow-sm;
+	}
+
+	.wc-block-cart-items__row {
+	  @apply mb-4 overflow-hidden shadow-sm;
+	}
+
+	.wc-block-cart-items__row a,
+	.wc-block-components-product-name,
+	.wc-block-components-totals-coupon-link {
+	  @apply text-primary no-underline;
+	}
+
+	.wc-block-cart-items__row a:hover,
+	.wc-block-components-product-name:hover,
+	.wc-block-components-totals-coupon-link:hover {
+	  @apply underline;
+	}
+
+	.wc-block-components-quantity-selector {
+	  @apply rounded border border-input bg-background;
+	}
+
+	.wc-block-components-quantity-selector input {
+	  @apply bg-transparent text-foreground;
+	}
+
+	.wc-block-components-quantity-selector button {
+	  @apply text-foreground;
 	}
 
   .shadcn-child-card {
-    @apply rounded-[var(--radius)] border bg-[var(--wp--preset--color--card)] p-6 text-[var(--wp--preset--color--card-foreground)];
+    @apply rounded border bg-[var(--wp--preset--color--card)] p-6 text-[var(--wp--preset--color--card-foreground)];
   }
 
   .shadcn-child-button {
-    @apply inline-flex min-h-10 items-center justify-center rounded-[var(--radius)] bg-[var(--wp--preset--color--primary)] px-4 py-2 text-sm font-medium text-[var(--wp--preset--color--primary-foreground)] no-underline transition-colors hover:opacity-90;
+    @apply inline-flex min-h-10 items-center justify-center rounded bg-[var(--wp--preset--color--primary)] px-4 py-2 text-sm font-medium text-[var(--wp--preset--color--primary-foreground)] no-underline transition-colors hover:opacity-90;
   }
 }

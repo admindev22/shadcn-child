@@ -3,15 +3,45 @@
   "version": 3,
   "settings": {
     "appearanceTools": true,
+    "color": {
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "palette": [
+        { "color": "oklch(1 0 0)", "name": "Background", "slug": "background" },
+        { "color": "oklch(0.147 0.004 49.25)", "name": "Foreground", "slug": "foreground" },
+        { "color": "oklch(1 0 0)", "name": "Card", "slug": "card" },
+        { "color": "oklch(0.147 0.004 49.25)", "name": "Card Foreground", "slug": "card-foreground" },
+        { "color": "oklch(1 0 0)", "name": "Popover", "slug": "popover" },
+        { "color": "oklch(0.147 0.004 49.25)", "name": "Popover Foreground", "slug": "popover-foreground" },
+        { "color": "oklch(0.555 0.163 48.998)", "name": "Primary", "slug": "primary" },
+        { "color": "oklch(0.987 0.022 95.277)", "name": "Primary Foreground", "slug": "primary-foreground" },
+        { "color": "oklch(0.967 0.001 286.375)", "name": "Secondary", "slug": "secondary" },
+        { "color": "oklch(0.21 0.006 285.885)", "name": "Secondary Foreground", "slug": "secondary-foreground" },
+        { "color": "oklch(0.97 0.001 106.424)", "name": "Muted", "slug": "muted" },
+        { "color": "oklch(0.553 0.013 58.071)", "name": "Muted Foreground", "slug": "muted-foreground" },
+        { "color": "oklch(0.97 0.001 106.424)", "name": "Accent", "slug": "accent" },
+        { "color": "oklch(0.216 0.006 56.043)", "name": "Accent Foreground", "slug": "accent-foreground" },
+        { "color": "oklch(0.577 0.245 27.325)", "name": "Destructive", "slug": "destructive" },
+        { "color": "oklch(0.987 0.022 95.277)", "name": "Destructive Foreground", "slug": "destructive-foreground" },
+        { "color": "oklch(0.923 0.003 48.717)", "name": "Border", "slug": "border" },
+        { "color": "oklch(0.923 0.003 48.717)", "name": "Input", "slug": "input" },
+        { "color": "oklch(0.709 0.01 56.259)", "name": "Ring", "slug": "ring" }
+      ]
+    },
     "layout": {
       "contentSize": "720px",
       "wideSize": "1200px"
     },
     "custom": {
-      "radius": "0.625rem"
+      "radius": "0"
     }
   },
   "styles": {
+    "color": {
+      "background": "var:preset|color|background",
+      "text": "var:preset|color|foreground"
+    },
     "elements": {
       "button": {
         "border": {
